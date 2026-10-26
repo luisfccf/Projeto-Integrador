@@ -82,3 +82,22 @@ Essa rota é adicional ao código fornecido e servirá ao frontend planejado.
 ## 7. Premissas de implantação
 
 O endereço `http://localhost/api` nos scripts pressupõe que a API é acessível no próprio ambiente de execução dos clientes. Se a simulação rodar no Colab e o servidor rodar em outra máquina, `localhost` não apontará para esse servidor. Endereço, porta e token serão configurados durante a implementação.
+## Status de implementação — Atividade 02
+
+### Endpoints implementados
+- GET / — Verificar funcionamento do servidor.
+- POST /api/readings — Receber e salvar leituras no SQLite.
+- GET /api/readings — Consultar leituras armazenadas.
+
+### Endpoints planejados
+- GET /api/commands — Consultar comandos pendentes.
+- POST /api/commands/add — Cadastrar comandos.
+- POST /api/commands/ack — Confirmar execução de co
+mandos.
+- GET /api/readings/history — Consultar histórico específico.
+
+### Tecnologias utilizadas
+- Backend: Node.js + Express
+- Banco de dados: SQLite
+- Simulador ESP32: Python
+- Comunicação: HTTP REST e JSON

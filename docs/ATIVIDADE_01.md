@@ -11,7 +11,7 @@ O sistema proposto permitirá acompanhar medições de temperatura de um soprado
 | Módulo | Tecnologia proposta | Responsabilidade |
 |---|---|---|
 | Dispositivo | ESP32 (simulado inicialmente em Python) | Enviar medições periodicamente, consultar comandos e confirmar recebimento/execução simulada |
-| Backend | Python + FastAPI | Expor API REST, validar requisições e persistir leituras e comandos |
+| Backend | Python + Node.js + Express | Expor API REST, validar requisições e persistir leituras e comandos |
 | Banco | SQLite no protótipo | Armazenar dispositivos, leituras e histórico/status de comandos |
 | Frontend | HTML, CSS e JavaScript | Exibir temperatura, histórico e formulário para envio de comandos |
 | Comunicação | HTTP + JSON e token Bearer | Integração entre os módulos, com autenticação a especificar e configurar |
@@ -22,7 +22,7 @@ O exemplo do professor usa os campos `temp` e `nivel`. Para o soprador térmico,
 
 ```mermaid
 flowchart TD
-  E[ESP32 / Simulador Python] <-->|POST leituras / GET comandos / POST confirmação| A[API REST - FastAPI]
+  E[ESP32 / Simulador Python] <-->|POST leituras / GET comandos / POST confirmação| A[API REST - Node.js + Express]
   F[Frontend Web] <-->|GET histórico / POST comandos| A
   A <-->|Leituras e comandos| B[(Banco SQLite)]
 ```
